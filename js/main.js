@@ -14,15 +14,12 @@
    });
    linkClose.addEventListener('click', () => {
       menu.classList.remove("header__content--active");
-      videoClose.classList.remove("video__close");
    });
    linkClose2.addEventListener('click', () => {
       menu.classList.remove("header__content--active");
-      videoClose.classList.remove("video__close");
    });
    linkClose3.addEventListener('click', () => {
       menu.classList.remove("header__content--active");
-      videoClose.classList.remove("video__close");
    });
 }());
 
