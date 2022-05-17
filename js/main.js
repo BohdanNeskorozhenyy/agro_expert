@@ -1,57 +1,35 @@
-(function () {
-   const burgerItem = document.querySelector('.burger');
-   const menu = document.querySelector('.header__content');
-   const menuClose = document.querySelector('.header__content--close')
-   const linkClose = document.querySelector('.header__content-link1')
-   const linkClose2 = document.querySelector('.header__content-link2')
-   const linkClose3 = document.querySelector('.header__content-link3')
+const burger = document.querySelector(".header__burger");
+const headerContent = document.querySelector(".header__content");
+const clotheBurger = document.querySelector(".header__content--close");
+const headerLinks = document.querySelectorAll(".header__content-link");
+const header = document.querySelector(".header__top");
+const arrow = document.querySelector(".header__arrow-button");
 
-   burgerItem.addEventListener('click', () => {
-     menu.classList.add("header__content--active");
-   });
-   menuClose.addEventListener('click', () => {
-      menu.classList.remove("header__content--active");
-   });
-   linkClose.addEventListener('click', () => {
-      menu.classList.remove("header__content--active");
-   });
-   linkClose2.addEventListener('click', () => {
-      menu.classList.remove("header__content--active");
-   });
-   linkClose3.addEventListener('click', () => {
-      menu.classList.remove("header__content--active");
-   });
-}());
+burger.addEventListener("click", () =>
+  headerContent.classList.add("header__content--active")
+);
+clotheBurger.addEventListener("click", () =>
+  headerContent.classList.remove("header__content--active")
+);
+headerLinks.forEach((link) =>
+  link.addEventListener("click", () =>
+    headerContent.classList.remove("header__content--active")
+  )
+);
+arrow.addEventListener("click", () => {
+  window.scrollTo({
+    top: 600,
+    behavior: "smooth",
+  });
+});
 
-
-
-   (function stickyBlock(id = "header") {
-      const block = document.getElementById(id),
-         sticky = block.getBoundingClientRect().height;
-
-      window.addEventListener('scroll', () => {
-      stickyClass();
-      });
-
-   function stickyClass() {
-      const pageTop = window.pageYOffset;
-
-      if (pageTop > sticky) {
-            block.classList.add("sticky");
-      } else {
-            block.classList.remove("sticky"); 
-         }
-         }
-   })()
-
-// Выберем кнопку и форму
-var hiddenElement = document.getElementById("form-section-scroll");
-var btn = document.querySelector('.arrow_button');
-
-function handleButtonClick() {
-   hiddenElement.scrollIntoView({block: "center", behavior: "smooth"});
-}
-
-btn.addEventListener('click', handleButtonClick);
-   
-
+document.addEventListener("scroll", () => {
+  let pageScrolTwo = window.pageYOffset;
+  if (pageScrolTwo > header.offsetHeight) {
+    header.classList.add("sticky");
+    header.style.height = "70px";
+  } else {
+    header.classList.remove("sticky");
+    header.style.height = "100px";
+  }
+});

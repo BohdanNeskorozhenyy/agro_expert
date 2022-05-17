@@ -36,12 +36,12 @@
                </div>
                <h1 class="header__title--mobile">DIGITAL AGRONOM</h1>
                <ul class="header__content-list">
-                  <li class="header__content-item header__content-item--1" ><img class="header__content-item--img" src="./img/svg/offer.svg" alt=""> <a class="header__content-link header__content-link1" href="#form" >Пропозиція</a></li>
-                  <li class="header__content-item header__content-item--2"><img class="header__content-item--img" src="./img/svg/settings.svg" alt=""> <a class="header__content-link header__content-link2" href="#tools" >Інструменти</a></li>
-                  <li class="header__content-item header__content-item--3"><img class="header__content-item--img" src="./img/svg/contact.svg" alt=""> <a class="header__content-link header__content-link3" href="#footer" >Контакти</a></li>
+                  <li class="header__content-item header__content-item--1" ><img class="header__content-item--img" src="./img/svg/offer.svg" alt=""> <a class="header__content-link" href="#form" >Пропозиція</a></li>
+                  <li class="header__content-item header__content-item--2"><img class="header__content-item--img" src="./img/svg/settings.svg" alt=""> <a class="header__content-link " href="#tools" >Інструменти</a></li>
+                  <li class="header__content-item header__content-item--3"><img class="header__content-item--img" src="./img/svg/contact.svg" alt=""> <a class="header__content-link " href="#footer" >Контакти</a></li>
                </ul>
             </div>
-            <div class="header__burger burger">
+            <div class="header__burger ">
                <span class="header__burger-line header__burger-line--1"></span>
                <span class="header__burger-line header__burger-line--2"></span>
                <span class="header__burger-line header__burger-line--3"></span>
@@ -65,7 +65,7 @@
             <div id="form-section-scroll"></div>
             <form class="form-section__form" action="#" id="form-section__form" >
                <input class="form-section__email form-section__input" type="email" placeholder="E-mail" >
-               <input class="form-section__tell form-section__input" data-phonemask-mask="+380(99) 999-99-99" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" value="+380"  type="tel" >
+               <input class="form-section__tell form-section__input" data-phonemask-mask="+380(99) 999-99-99" oninput="this.value = this.value.replace(/[^0-9 +.]/g, '').replace(/(\..*)\./g, '$1');" value="+380"  maxLength="13" type="tel" >
                <input class="form-section__name form-section__input" type="text" placeholder="ПІБ">
                <button class="form-section__button"> Отримати</button>
             </form>
@@ -111,13 +111,13 @@
             <div class="steps__subtitle">для досягнення економічної ефективності</div>
             <div class="steps__items">
                <div class="steps__items-bg">
-                  <div class="steps__items-circle">1</div>
+                  <div class="steps__items-circle"><span>1</span></div>
                   <div class="steps__items-line steps__items-line1"></div>
-                  <div class="steps__items-circle">2</div>
+                  <div class="steps__items-circle"><span>2</span></div>
                   <div class="steps__items-line steps__items-line2"></div>
-                  <div class="steps__items-circle">3</div>
+                  <div class="steps__items-circle"><span>3</span></div>
                   <div class="steps__items-line steps__items-line3"></div>
-                  <div class="steps__items-circle">4</div>
+                  <div class="steps__items-circle"><span>4</span></div>
                </div>
                <div class="steps__item-wreap steps__item-wreap1">
                   <div class="steps__item steps__item1">
@@ -223,7 +223,7 @@
          <div class="container">
             <div class="footer__inner">
                <form class="footer__form" action="#" >
-                  <input class="form-section__tell form-section__input footer__input-tel" data-phonemask-mask="+380(99) 999-99-99" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" value="+380"  type="tel" >
+                  <input class="form-section__tell form-section__input footer__input-tel" data-phonemask-mask="+380(99) 999-99-99" oninput="this.value = this.value.replace(/[^0-9 +.]/g, '').replace(/(\..*)\./g, '$1');" value="+380"  maxLength="13" type="tel" >
                   <button class="footer__form-btn">ЗВ'ЯЖІТЬСЯ ЗІ МНОЮ</button>
                </form>
                <a class="footer__email-link" href="mailto:d.hlushko@agro-e.com.ua" ></a>
