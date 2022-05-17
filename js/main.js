@@ -17,8 +17,9 @@ headerLinks.forEach((link) =>
   )
 );
 arrow.addEventListener("click", () => {
+  let windowHeight = window.innerHeight;
   window.scrollTo({
-    top: 600,
+    top: windowHeight - 70,
     behavior: "smooth",
   });
 });

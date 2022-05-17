@@ -102,6 +102,8 @@ section {
 
 html {
   height: 100%;
+  scroll-behavior: smooth;
+
 }
 * {
   box-sizing: border-box;
@@ -167,7 +169,6 @@ table {
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .sticky .header__content-list {
-  padding-top: 15px;
   transition: 0.3s;
 }
 .container {
@@ -329,6 +330,8 @@ table {
   }
   .header__content-list {
     flex-direction: column;
+	 gap: 20px;
+	 padding-left: 0;
   }
   .header__burger {
     display: block;
