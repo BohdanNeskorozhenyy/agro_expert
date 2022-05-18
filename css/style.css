@@ -449,6 +449,7 @@ table {
   left: 10px;
 }
 .form-section__button {
+  cursor: pointer;
   width: 155px;
   height: 56px;
   border-radius: 30px;
@@ -900,6 +901,7 @@ table {
   height: 50px;
 }
 .footer__form-btn {
+  cursor: pointer;
   color: #fff;
   border: 1px solid #ffffff;
   background-color: #007a21;

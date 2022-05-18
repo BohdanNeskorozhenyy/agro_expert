@@ -62,11 +62,11 @@
             <h2 class="title form-section__title">ЗМЕНШИТИ ВИТРАТИ</h2>
             <div class="form-section__description">створено агрономами для агрономів</div>
             <div id="form-section-scroll"></div>
-            <form class="form-section__form" action="#" id="form-section__form" >
-               <input class="form-section__email form-section__input" type="email" placeholder="E-mail" >
-               <input class="form-section__tell form-section__input" data-phonemask-mask="+380(99) 999-99-99" oninput="this.value = this.value.replace(/[^0-9 +.]/g, '').replace(/(\..*)\./g, '$1');" value="+380"  maxLength="13" type="tel" >
-               <input class="form-section__name form-section__input" type="text" placeholder="ПІБ">
-               <button class="form-section__button"> Отримати</button>
+            <form class="form-section__form" id="form-section__form" >
+               <input required class="form-section__email form-section__input" type="email" placeholder="E-mail" >
+               <input required class="form-section__tell form-section__input" data-phonemask-mask="+380(99) 999-99-99" oninput="this.value = this.value.replace(/[^0-9 +]/g, '').replace(/(\..*)\./g, '$1');" value="+380" pattern=".{13,13}" maxlength="13" type="tel" >
+               <input required class="form-section__name form-section__input" type="text" placeholder="ПІБ">
+               <button type="submit" class="form-section__button"> Отримати</button>
             </form>
          </div>
       </div>
@@ -221,9 +221,9 @@
       <div class="footer__down">
          <div class="container">
             <div class="footer__inner">
-               <form class="footer__form" action="#" >
-                  <input class="form-section__tell form-section__input footer__input-tel" data-phonemask-mask="+380(99) 999-99-99" oninput="this.value = this.value.replace(/[^0-9 +.]/g, '').replace(/(\..*)\./g, '$1');" value="+380"  maxLength="13" type="tel" >
-                  <button class="footer__form-btn">ЗВ'ЯЖІТЬСЯ ЗІ МНОЮ</button>
+               <form class="footer__form">
+                  <input required class="form-section__tell form-section__input footer__input-tel"  oninput="this.value = this.value.replace(/[^0-9 +]/g, '').replace(/(\..*)\./g, '$1');" value="+380" pattern=".{13,13}" maxlength="13" type="tel" >
+                  <button type="submit" class="footer__form-btn">ЗВ'ЯЖІТЬСЯ ЗІ МНОЮ</button>
                </form>
                <a class="footer__email-link" href="mailto:d.hlushko@agro-e.com.ua" ></a>
                <a class="footer__tel-link" href="tel:+380675394637" >+380 67 539 4637</a>
@@ -235,5 +235,48 @@
    </footer>
    <a name="footer"></a>
 <script src="./js/main.js"></script>
+
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+
+<script type="text/javascript">
+   function sendEmail(name, email, number){
+      var templateParams = {
+         name: name,
+         email: email,
+         number: number
+      };
+      emailjs.init("t7eMCLVw9dImSHaoG");
+      emailjs.send('service_bgmxqi9', 'template_z73rd1c', templateParams, 't7eMCLVw9dImSHaoG')
+   }
+   const form = document.querySelector('.form-section__form')
+   const footerForm = document.querySelector('.footer__form');
+   const inputs = form.querySelectorAll('input')
+   const footerInputs = footerForm.querySelectorAll('input')
+   
+   form.addEventListener('submit', (e)=> {
+      e.preventDefault()
+      const data = {
+         name: inputs[2].value || 'Невідомий клієнт',
+         email: inputs[0].value || 'Невідомо',
+         number: inputs[1].value
+      }
+      sendEmail(data.name, data.email, data.number)
+      form.reset();
+   })
+   footerForm.addEventListener('submit', (e)=> {
+      e.preventDefault();
+      const data = {
+         name: inputs[2].value || 'Невідомий клієнт',
+         email: inputs[0].value || 'Невідомо',
+         number: inputs[1].value
+      }
+      sendEmail(data.name, data.email, data.number)
+      footerForm.reset();
+   })
+
+</script>
+
 </body>
 </html>
