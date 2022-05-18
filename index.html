@@ -269,9 +269,9 @@
    footerForm.addEventListener('submit', (e)=> {
       e.preventDefault();
       const data = {
-         name: inputs[2].value || 'Невідомий клієнт',
-         email: inputs[0].value || 'Невідомо',
-         number: inputs[1].value
+         name: 'Невідомий клієнт',
+         email:  'Невідомо',
+         number: footerInputs[0].value
       }
       sendEmail(data.name, data.email, data.number)
       footerForm.reset();
