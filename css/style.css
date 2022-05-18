@@ -603,7 +603,7 @@ table {
   max-width: 960px;
 }
 .steps__item-wreap {
-  padding-bottom: 86px;
+  padding-bottom: 110px;
   width: 100%;
 }
 .steps__item {
@@ -680,7 +680,7 @@ table {
   height: 130px;
 }
 .steps__items-line3 {
-  height: 120px;
+  height: 130px;
 }
 .steps__items-circle {
   width: 50px;
@@ -870,7 +870,7 @@ table {
 
 /*footer-styles__start*/
 .footer__top {
-  height: 100vh;
+  height: calc(100vh - 100px);
   width: 100vw;
   background: -webkit-linear-gradient(
       top,
